@@ -44,5 +44,5 @@ JobFit AI is an innovative resume analysis tool that leverages artificial intell
 
 Run the Streamlit app:
 ```
-streamlit run app.py
+streamlit run main.py
 ```
