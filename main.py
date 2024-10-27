@@ -186,20 +186,32 @@ def main():
 
     # Enhanced Sidebar
     with st.sidebar:
-        st.markdown("""
-            <div style='text-align: center; padding: 1rem;'>
-                <h1 style='color: white;'>🎯 JobFit AI</h1>
-            </div>
-        """, unsafe_allow_html=True)
-        
-        st.markdown("### 📊 Analysis Tools")
-        
-        tool_selection = st.radio(
-            "Select Analysis Type",
-            options=list(TOOL_OPTIONS.keys()),
-            format_func=lambda x: f"{TOOL_OPTIONS[x]} {x}",
-            help="Choose the type of analysis you want to perform"
-        )
+        with st.sidebar:
+            st.markdown("""
+                <style>
+                .sidebar-title {
+                    text-align: center;
+                    padding: 1rem;
+                }
+                .sidebar-title h1 {
+                    color: var(--text-color);
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+                </style>
+                <div class="sidebar-title">
+                    <h1>🎯 JobFit AI</h1>
+                </div>
+            """, unsafe_allow_html=True)
+            
+            st.markdown("### 📊 Analysis Tools")
+            
+            tool_selection = st.radio(
+                "Select Analysis Type",
+                options=list(TOOL_OPTIONS.keys()),
+                format_func=lambda x: f"{TOOL_OPTIONS[x]} {x}",
+                help="Choose the type of analysis you want to perform"
+            )
         
         st.divider()
         
