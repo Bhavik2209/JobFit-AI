@@ -1,19 +1,22 @@
 # JobFit AI - Advanced Resume Analyzer
 
 ## Description
-JobFit AI is an innovative resume analysis tool that leverages artificial intelligence to provide job seekers with valuable insights and recommendations. Our application helps users optimize their resumes, prepare for interviews, and explore career opportunities.
+JobFit AI is an innovative resume analysis tool that leverages artificial intelligence to provide job seekers with valuable insights and recommendations. Our application helps users optimize their resumes, create compelling cover letters, enhance their LinkedIn profiles, and improve their job application materials through AI-powered analysis.
 
 ## Features
-- Resume Analysis: Get detailed feedback on your resume's content and format.
-- ATS Compatibility Check: Ensure your resume is optimized for Applicant Tracking Systems.
-- Job Description Matching: Compare your resume against specific job descriptions.
-- Career Story Generator: Craft a compelling narrative of your professional journey.
-- Future Skills Predictor: Discover skills that will be crucial in your field in the coming years.
-- Personal Brand Statement: Generate a unique value proposition statement.
-- Interview Question Generator: Prepare for interviews with custom questions based on your resume.
-- Career Pivot Advisor: Explore potential career transitions based on your skills.
+### 📊 Analysis Tools
+- **Basic Analysis**: Get comprehensive evaluation of your resume with detailed feedback
+- **Resume Enhancement**: Receive smart suggestions for content improvement and optimization
+- **Layout Analysis**: Get detailed feedback on format, structure, and visual presentation
+- **Cover Letter Generator**: Create compelling, customized cover letters for your applications
+- **LinkedIn Optimization**: Enhance your professional online presence with targeted recommendations
 
-- Provide feedback to help us improve the application.
+### Key Capabilities
+- ATS Compatibility Check: Ensure your resume is optimized for Applicant Tracking Systems
+- Job Description Matching: Compare your resume against specific job descriptions
+- Format Optimization: Get feedback on resume structure and visual presentation
+- Content Analysis: Receive detailed feedback on your professional experiences
+- Keyword Optimization: Identify and integrate relevant industry keywords
 
 ## Installation
 
@@ -46,3 +49,9 @@ Run the Streamlit app:
 ```
 streamlit run main.py
 ```
+
+## Feedback
+We're constantly working to improve JobFit AI. Your feedback helps us make the application better and more useful for all users.
+
+---
+*Currently in beta - Join us in reshaping how professionals approach career development*
