@@ -1,6 +1,5 @@
 streamlit
 google-generativeai
 PyPDF2
-python-dotenv
 smtplib
 email
