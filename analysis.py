@@ -80,15 +80,12 @@ def get_match_analysis(model, job_description, resume_text):
                 
                 return analysis
             except json.JSONDecodeError as je:
-                st.error(f"JSON parsing error: {str(je)}")
-                st.error("Raw JSON string:")
-                st.code(json_str)
                 raise
         else:
             raise ValueError("Could not find valid JSON in the response")
             
     except Exception as e:
-        st.error("Error in analysis. Retrying with simplified prompt...")
+        
         
         # Fallback to simplified analysis if the detailed one fails
         try:
@@ -161,7 +158,7 @@ def get_resume_enhancement_suggestions(model, resume_text):
         response = model.generate_content(prompt)
         return clean_and_parse_json(response.text)
     except Exception as e:
-        st.error(f"Error in enhancement analysis: {str(e)}")
+        
         return None
 
 def clean_and_parse_json(response_text):
@@ -178,7 +175,7 @@ def clean_and_parse_json(response_text):
         try:
             return json.loads(json_str)
         except json.JSONDecodeError as e:
-            st.error(f"JSON parsing error: {str(e)}")
-            st.code(json_str)  # Display the problematic JSON for debugging
+            
+             # Display the problematic JSON for debugging
             return None
     return None
