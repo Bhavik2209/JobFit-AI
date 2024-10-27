@@ -1,5 +1,3 @@
 streamlit
 google-generativeai
 PyPDF2
-smtplib
-email
