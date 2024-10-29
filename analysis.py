@@ -3,7 +3,7 @@ import streamlit as st
 
 def get_match_analysis(model, job_description, resume_text):
     prompt = f"""
-    Act as an expert ATS (Applicant Tracking System) scanner and professional resume analyst. Analyze the job description and resume provided below.
+    Act as an expert ATS (Applicant Tracking System) scanner and professional resume analyst. Analyze the job description and resume provided below. and dont give too large descirption, give small.
     
     Return ONLY the following JSON format with no additional text, comments, or markdown formatting:
 
