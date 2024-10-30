@@ -3,11 +3,12 @@ import google.generativeai as genai
 import time
 from datetime import datetime
 from analysis import get_match_analysis, get_resume_enhancement_suggestions
-from display import display_match_results, display_enhancement_suggestions, display_linkedin_optimization
+from display import display_match_results, display_enhancement_suggestions, display_linkedin_optimization,display_interview_tips
 from utils import extract_text_from_pdf
 from linkedin_optimization import generate_linkedin_optimization
 from cover_letter import generate_custom_cover_letter
 from layout_analysis import analyze_resume_layout
+from interview_tips import generate_interview_tips
 
 # Constants
 GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
@@ -16,7 +17,8 @@ TOOL_OPTIONS = {
     "Resume Enhancement": "🚀",
     "Layout Analysis": "📋",
     "Cover Letter Generator": "📨",
-    "LinkedIn Optimization": "💼"
+    "LinkedIn Optimization": "💼",
+    "Interview Tips" : "🤝"
 }
 
 EMOJI_MAP = {
@@ -242,6 +244,7 @@ def main():
                     <li>Analyze resume layout</li>
                     <li>Generate custom cover letters</li>
                     <li>Optimize LinkedIn profiles</li>
+                    <li>Get interview tips</li>
                 </ul>
             </div>
         """, unsafe_allow_html=True)
@@ -435,7 +438,19 @@ def main():
                         )
                         display_linkedin_optimization(linkedin_suggestions)
                         return linkedin_suggestions
-
+                    elif tool_selection == "Interview Tips":
+                        st.markdown("""
+                            <div class='analysis-card'>
+                                <h3>🤝 Interview Tips</h3>
+                            </div>
+                        """, unsafe_allow_html=True)
+                        interview_tips = generate_interview_tips(
+                            model,
+                            resume_text
+                        )
+                        display_interview_tips(interview_tips)
+                        return interview_tips
+                    
                 results = perform_analysis()
                 if results:
                     st.session_state.analysis_history.append({

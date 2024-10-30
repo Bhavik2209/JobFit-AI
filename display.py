@@ -335,3 +335,46 @@ def display_linkedin_optimization(linkedin_suggestions):
             
     except Exception as e:
         st.error(f"Error displaying LinkedIn optimization: {str(e)}")
+
+def display_interview_tips(interview_tips):
+    if not interview_tips:
+        st.error("Unable to generate interview preparation tips.")
+        return
+    
+    try:
+        st.markdown("### 🎯 Interview Preparation Tips")
+
+        # Preparation Tips
+        with st.expander("📋 General Preparation Tips"):
+            for tip in interview_tips.get("preparation_tips", []):
+                st.markdown(f"- {tip}")
+
+        # Questions to Expect
+        st.markdown("#### 🔍 Potential Interview Questions")
+        
+        with st.container():
+            st.subheader("Commonly Expected Questions")
+            for question in interview_tips.get("questions_to_expect", []):
+                st.markdown(f"- ❓ {question}")
+
+        # Behavioral Questions
+        with st.container():
+            st.subheader("Behavioral Questions")
+            for question in interview_tips.get("behavioral_questions", []):
+                st.markdown(f"- 💼 {question}")
+
+        # Role-Specific Questions
+        with st.container():
+            st.subheader("Role-Specific Questions")
+            for question in interview_tips.get("role_specific_questions", []):
+                st.markdown(f"- 🔧 {question}")
+
+        # General Interview Tips
+        st.markdown("#### 🧠 General Interview Tips")
+        
+        with st.expander("View General Tips"):
+            for tip in interview_tips.get("general_interview_tips", []):
+                st.markdown(f"- 💡 {tip}")
+    
+    except Exception as e:
+        st.error(f"Error displaying interview tips: {str(e)}")
